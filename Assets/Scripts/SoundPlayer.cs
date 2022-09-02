@@ -19,7 +19,7 @@ namespace Aftermath
         public enum AudioEnum
         {
         }
-        
+
         public void InitializeAudioPlayer()
         {
             Instance = this;

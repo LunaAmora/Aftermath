@@ -1,21 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Aftermath
 {
     public class Player : MonoBehaviour
     {
-        // Start is called before the first frame update
+        [SerializeField] private InputReader _input;
+
         void Start()
         {
-        
+
         }
 
-        // Update is called once per frame
         void Update()
         {
-        
+
         }
     }
 }

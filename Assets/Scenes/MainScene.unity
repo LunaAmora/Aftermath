@@ -629,6 +629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a227009378fc742a719c9a5a73e5b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _input: {fileID: 11400000, guid: 3b9aeddef298d1f449a29f2440942d60, type: 2}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,7 +689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 958704020}
   m_Layer: 0
-  m_Name: --- Managers ---
+  m_Name: -- Managers --
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -754,6 +755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d318839b300e9b4eb3cb13f55a813e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPaused: 0
 --- !u!1 &2029147663
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,7 +766,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2029147664}
   m_Layer: 0
-  m_Name: --- Misc ---
+  m_Name: -- Misc --
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
