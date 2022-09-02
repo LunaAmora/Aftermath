@@ -26,7 +26,7 @@ namespace Aftermath
 
         public void OnClick(InputAction.CallbackContext context)
         {
-            if (!GameManager.Instance.isPaused)
+            if (!GameManager.Instance.isPaused && context.performed)
             {
                 OnMouseClick?.Invoke();
             }
