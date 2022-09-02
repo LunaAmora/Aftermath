@@ -1,7 +1,9 @@
 {
     "name": "Aftermath.Editor",
     "rootNamespace": "Aftermath.Editor",
-    "references": [],
+    "references": [
+        "GUID:abed840083b893d4cb11909ed7cf426e"
+    ],
     "includePlatforms": [
         "Editor"
     ],

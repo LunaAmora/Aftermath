@@ -3,7 +3,8 @@
     "rootNamespace": "Aftermath",
     "references": [
         "GUID:5ff19de4e75d1bf43b666e262849be38",
-        "GUID:4307f53044263cf4b835bd812fc161a4"
+        "GUID:4307f53044263cf4b835bd812fc161a4",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
