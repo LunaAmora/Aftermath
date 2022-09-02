@@ -1,0 +1,17 @@
+{
+    "name": "Aftermath",
+    "rootNamespace": "Aftermath",
+    "references": [
+        "GUID:5ff19de4e75d1bf43b666e262849be38",
+        "GUID:4307f53044263cf4b835bd812fc161a4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
