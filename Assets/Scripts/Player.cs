@@ -6,17 +6,20 @@ namespace Aftermath
     {
         [SerializeField] private InputReader _input;
         [SerializeField] private PlayerWeapon _weapon;
+        [SerializeField] private PlayerModel _model;
         [SerializeField] private float _speed;
 
         private Transform _transform;
         private Vector3 _moveDir;
         private Vector2 _mousePos;
+        private Plane _plane;
 
         void Start()
         {
             _input.OnMoveDirection += MoveDir;
             _input.OnMouseMove += LookDir;
             _input.OnMouseClick += Shoot;
+            _plane = new Plane(Vector3.up, transform.position);
 
             _input.Initialize();
         }
@@ -49,11 +52,15 @@ namespace Aftermath
 
         private void LookAt()
         {
-            var pos = (Vector2) Camera.main.WorldToScreenPoint(transform.position);
-            var direc = (_mousePos - pos);
-            var angle = Mathf.Atan2(direc.y, direc.x) * Mathf.Rad2Deg;
-
-            transform.LeanRotateY(-angle, 0.1f);
+            float distance;
+            Ray ray = Camera.main.ScreenPointToRay(_mousePos);
+            if (_plane.Raycast(ray, out distance))
+            {
+                var worldPosition = ray.GetPoint(distance);
+                var targetDir = worldPosition - transform.position;
+                var angle = Vector3.SignedAngle(targetDir, transform.forward, Vector3.down);
+                _model.LookAt(angle);
+            }
         }
 
         private void LookDir(Vector2 dir)
@@ -63,7 +70,7 @@ namespace Aftermath
 
         private void MoveDir(Vector2 dir)
         {
-            _moveDir = new Vector3(-dir.y, 0, dir.x).normalized;
+            _moveDir = new Vector3(dir.x, 0, dir.y).normalized;
         }
     }
 }
