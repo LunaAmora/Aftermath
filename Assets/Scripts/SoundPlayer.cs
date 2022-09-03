@@ -36,7 +36,7 @@ namespace Aftermath
 
         public bool GetAudioClip(AudioEnum enumValue, out AudioClip clip)
         {
-             if((int)enumValue < _soundList.AudioClips.Count)
+            if((int)enumValue < _soundList.AudioClips.Count)
             {
                 clip = _soundList.AudioClips[(int)enumValue];
                 if(clip != null)
