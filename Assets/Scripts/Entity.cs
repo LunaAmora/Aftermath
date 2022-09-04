@@ -6,8 +6,8 @@ namespace Aftermath
     public class Entity : MonoBehaviour
     {
         [SerializeField] private float _maxHealth = 100;
+        [ReadOnly] [SerializeField] private float _health;
         [SerializeField] private bool _invulnerable;
-        private float _health;
 
         public event Action OnDeath;
         public event Action OnDamaged;

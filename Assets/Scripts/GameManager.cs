@@ -11,7 +11,7 @@ namespace Aftermath
         [SerializeField] private List<Level> _levels;
 
         [SerializeField] private LevelEnum _currentLevel;
-        [ReadOnly] public Level _levelObject = null;
+        [ReadOnly] [SerializeField] private Level _levelObject = null;
 
         [HideInInspector] public bool isPaused = false;
 
