@@ -56,6 +56,7 @@ namespace Aftermath
                 if (!Application.isPlaying)
                 {
                     _levelObject = (Level) PrefabUtility.InstantiatePrefab(lvl, _world);
+                    EditorUtility.SetDirty(_levelObject);
                 }
                 else
 #endif
