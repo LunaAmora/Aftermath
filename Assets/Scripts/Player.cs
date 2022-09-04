@@ -2,12 +2,14 @@ using UnityEngine;
 
 namespace Aftermath
 {
-    public class Player : MonoBehaviour
+    public class Player : Entity
     {
+        [SerializeField] private float _speed;
+        [Space(10)]
+
         [SerializeField] private InputReader _input;
         [SerializeField] private PlayerWeapon _weapon;
         [SerializeField] private PlayerModel _model;
-        [SerializeField] private float _speed;
 
         private Transform _transform;
         private Vector3 _moveDir;
@@ -37,7 +39,7 @@ namespace Aftermath
             LookAt();
         }
 
-        private void Move()
+        void Move()
         {
             if (_moveDir != Vector3.zero)
             {
@@ -45,12 +47,12 @@ namespace Aftermath
             }
         }
 
-        private void Shoot()
+        void Shoot()
         {
             _weapon.Shoot();
         }
 
-        private void LookAt()
+        void LookAt()
         {
             float distance;
             Ray ray = Camera.main.ScreenPointToRay(_mousePos);
@@ -63,12 +65,12 @@ namespace Aftermath
             }
         }
 
-        private void LookDir(Vector2 dir)
+        void LookDir(Vector2 dir)
         {
             _mousePos = dir;
         }
 
-        private void MoveDir(Vector2 dir)
+        void MoveDir(Vector2 dir)
         {
             _moveDir = new Vector3(dir.x, 0, dir.y).normalized;
         }

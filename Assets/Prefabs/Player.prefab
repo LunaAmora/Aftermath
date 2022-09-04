@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5084815832599516168}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,10 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a227009378fc742a719c9a5a73e5b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _invulnerable: 0
+  _speed: 15
   _input: {fileID: 11400000, guid: 3b9aeddef298d1f449a29f2440942d60, type: 2}
   _weapon: {fileID: 5084815832683255206}
   _model: {fileID: 5084815832781378112}
-  _speed: 15
 --- !u!1001 &3354624367732211790
 PrefabInstance:
   m_ObjectHideFlags: 0
