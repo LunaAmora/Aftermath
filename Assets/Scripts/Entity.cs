@@ -3,7 +3,7 @@ using System;
 
 namespace Aftermath
 {
-    public class Entity : MonoBehaviour
+    public abstract class Entity : MonoBehaviour
     {
         [SerializeField] private float _maxHealth = 100;
         [ReadOnly] [SerializeField] private float _health;

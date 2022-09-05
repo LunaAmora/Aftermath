@@ -1,6 +1,4 @@
 namespace Aftermath
 {
-    public class Boss : Entity
-    {
-    }
+    public abstract class Boss : Entity {}
 }
