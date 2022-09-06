@@ -48,7 +48,7 @@ MonoBehaviour:
   _maxHealth: 100
   _health: 0
   _invulnerable: 0
-  _speed: 7
+  _speed: 6
   _input: {fileID: 11400000, guid: 3b9aeddef298d1f449a29f2440942d60, type: 2}
   _weapon: {fileID: 5084815832683255206}
   _model: {fileID: 5084815832781378112}

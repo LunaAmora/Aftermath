@@ -1,3 +1,4 @@
+using Cinemachine.Utility;
 using UnityEngine;
 
 namespace Aftermath
@@ -11,7 +12,7 @@ namespace Aftermath
         [SerializeField] private PlayerWeapon _weapon;
         [SerializeField] private PlayerModel _model;
 
-        private Transform _transform;
+        private float _lookAngle;
         private Vector3 _moveDir;
         private Vector2 _mousePos;
         private Plane _plane;
@@ -37,6 +38,7 @@ namespace Aftermath
         {
             Move();
             LookAt();
+            Animate();
         }
 
         void Move()
@@ -47,11 +49,6 @@ namespace Aftermath
             }
         }
 
-        void Shoot()
-        {
-            _weapon.Shoot();
-        }
-
         void LookAt()
         {
             float distance;
@@ -59,9 +56,24 @@ namespace Aftermath
             if (_plane.Raycast(ray, out distance))
             {
                 var worldPosition = ray.GetPoint(distance);
-                var targetDir = worldPosition - transform.position;
-                var angle = Vector3.SignedAngle(targetDir, transform.forward, Vector3.down);
-                _model.LookAt(angle);
+                var lookDir = (worldPosition - transform.position).normalized;
+                _lookAngle = Vector3.SignedAngle(lookDir, transform.forward, Vector3.down);
+                _model.LookAt(_lookAngle);
+            }
+        }
+
+        void Animate()
+        {
+            if (_moveDir == Vector3.zero)
+            {
+                _model.Animate(Vector2.zero);
+            }
+            else
+            {
+                var moveAngle = Vector3.SignedAngle(_moveDir, transform.forward, Vector3.down);
+                var angle = (moveAngle - _lookAngle) * Mathf.Deg2Rad;
+                var animDir = (new Vector2(Mathf.Sin(angle), Mathf.Cos(angle))).SquareNormalize();
+                _model.Animate(animDir);
             }
         }
 
@@ -73,6 +85,11 @@ namespace Aftermath
         void MoveDir(Vector2 dir)
         {
             _moveDir = new Vector3(dir.x, 0, dir.y).normalized;
+        }
+
+        void Shoot()
+        {
+            _weapon.Shoot();
         }
     }
 }
