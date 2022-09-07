@@ -10,10 +10,10 @@ namespace Aftermath
         [SerializeField] private float _damage = 10f;
         private ProjOwner _owner;
 
-        public void Impulse(float force, ProjOwner owner = ProjOwner.Player)
+        public void Impulse(float force, Vector3 dir, ProjOwner owner = ProjOwner.Player)
         {
             _owner = owner;
-            GetComponent<Rigidbody>().AddForce(transform.forward * force);
+            GetComponent<Rigidbody>().AddForce(dir * force);
             gameObject.LeanDelayedCall(_duration, () => Destroy(gameObject));
         }
 

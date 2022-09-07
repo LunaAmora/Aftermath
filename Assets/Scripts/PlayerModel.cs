@@ -31,7 +31,7 @@ namespace Aftermath
 
         public void AnimEventShoot()
         {
-            _weapon.Shoot();
+            _weapon.Shoot(transform.forward);
             _shooting = false;
         }
 

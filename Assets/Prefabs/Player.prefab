@@ -58,6 +58,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5084815832599516171}
     m_Modifications:
+    - target: {fileID: 210672894804307908, guid: fe9e97e8eb8fe9e4992fb0fe566843c8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.01373
+      objectReference: {fileID: 0}
     - target: {fileID: 5167905823474011436, guid: fe9e97e8eb8fe9e4992fb0fe566843c8,
         type: 3}
       propertyPath: m_Name
@@ -118,6 +123,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8532669263442446661, guid: fe9e97e8eb8fe9e4992fb0fe566843c8,
+        type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 7441785249808794795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe9e97e8eb8fe9e4992fb0fe566843c8, type: 3}
 --- !u!114 &2420289545726893096 stripped
@@ -135,6 +145,12 @@ MonoBehaviour:
 --- !u!4 &2729391490666091044 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5544993663092201366, guid: fe9e97e8eb8fe9e4992fb0fe566843c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 7571528723657606578}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7441785249808794795 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1032996687051686169, guid: fe9e97e8eb8fe9e4992fb0fe566843c8,
     type: 3}
   m_PrefabInstance: {fileID: 7571528723657606578}
   m_PrefabAsset: {fileID: 0}
