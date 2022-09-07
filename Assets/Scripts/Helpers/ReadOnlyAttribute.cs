@@ -2,7 +2,5 @@ using UnityEngine;
 
 namespace Aftermath
 {
-    public class ReadOnlyAttribute : PropertyAttribute
-    {
-    }
+    public class ReadOnlyAttribute : PropertyAttribute {}
 }
