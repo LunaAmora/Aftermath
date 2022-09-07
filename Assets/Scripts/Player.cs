@@ -9,7 +9,6 @@ namespace Aftermath
         [Space(10)]
 
         [SerializeField] private InputReader _input;
-        [SerializeField] private PlayerWeapon _weapon;
         [SerializeField] private PlayerModel _model;
 
         private float _lookAngle;
@@ -72,7 +71,7 @@ namespace Aftermath
             {
                 var moveAngle = Vector3.SignedAngle(_moveDir, transform.forward, Vector3.down);
                 var angle = (moveAngle - _lookAngle) * Mathf.Deg2Rad;
-                var animDir = (new Vector2(Mathf.Sin(angle), Mathf.Cos(angle))).SquareNormalize();
+                var animDir = (new Vector2(Mathf.Sin(angle), Mathf.Cos(angle))).normalized;
                 _model.Animate(animDir);
             }
         }
@@ -89,7 +88,7 @@ namespace Aftermath
 
         void Shoot()
         {
-            _weapon.Shoot();
+            _model.Shoot();
         }
     }
 }
