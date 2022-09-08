@@ -1,0 +1,330 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BhaskaraTopMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature.001
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/legl1
+    m_Weight: 0
+  - m_Path: Armature.001/pelvis/legl1/legl2
+    m_Weight: 0
+  - m_Path: Armature.001/pelvis/legl1/legl2/feetl1
+    m_Weight: 0
+  - m_Path: Armature.001/pelvis/legl1/legl2/feetl1/feetl2
+    m_Weight: 0
+  - m_Path: Armature.001/pelvis/legl1/legl2/feetl1/feetl2/feetl2_end
+    m_Weight: 0
+  - m_Path: Armature.001/pelvis/legl1.001
+    m_Weight: 0
+  - m_Path: Armature.001/pelvis/legl1.001/legl2.001
+    m_Weight: 0
+  - m_Path: Armature.001/pelvis/legl1.001/legl2.001/feetl1.001
+    m_Weight: 0
+  - m_Path: Armature.001/pelvis/legl1.001/legl2.001/feetl1.001/feetl2.001
+    m_Weight: 0
+  - m_Path: Armature.001/pelvis/legl1.001/legl2.001/feetl1.001/feetl2.001/feetl2.001_end
+    m_Weight: 0
+  - m_Path: Armature.001/pelvis/spine
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/BeardL3
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/BeardL3/BeardL2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/BeardL3/BeardL2/Beardl3
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/BeardL3/BeardL2/Beardl3/Beardl3_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/BeardMiddle1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/BeardMiddle1/Beardmiddle2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/BeardMiddle1/Beardmiddle2/BeardMiddle3
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/BeardMiddle1/Beardmiddle2/BeardMiddle3/BeardMiddle3_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/BeardML1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/BeardML1/BeardML2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/BeardML1/BeardML2/BeardML3
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/BeardML1/BeardML2/BeardML3/BeardML3_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/BeardMR1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/BeardMR1/BeardMR2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/BeardMR1/BeardMR2/BeardMR3
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/BeardMR1/BeardMR2/BeardMR3/BeardMR3_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/BeardR1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/BeardR1/BeardR2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/BeardR1/BeardR2/BeardR3
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/BeardR1/BeardR2/BeardR3/BeardR3_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/EyebrowL1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/EyebrowL1/EyebrowL2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/EyebrowL1/EyebrowL2/EyebrowL3
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/EyebrowL1/EyebrowL2/EyebrowL3/EyebrowL3_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/EyebrowR1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/EyebrowR1/eyebrowR2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/EyebrowR1/eyebrowR2/eyebrowR3
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/EyebrowR1/eyebrowR2/eyebrowR3/eyebrowR3_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/Hairl1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/Hairl1/Hairl2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/Hairl1/Hairl2/Hairl2_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/HairM1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/HairM1/HairM2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/HairM1/HairM2/HairM2_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/HairR1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/HairR1/HairR2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/HairR1/HairR2/HairR2_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/Head
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/Head/Head_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/MustacheL1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/MustacheL1/MustacheL2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/MustacheL1/MustacheL2/MustacheL3
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/MustacheL1/MustacheL2/MustacheL3/MustacheL3_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/MustacheR1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/MustacheR1/MustacheR2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/MustacheR1/MustacheR2/MustacheR3
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/MustacheR1/MustacheR2/MustacheR3/MustacheR3_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/Turbant cloth1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/Turbant cloth1/Turbant cloth2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Neck/Turbant cloth1/Turbant cloth2/Turbant
+      cloth2_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml/handl
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml/handl/indexl1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml/handl/indexl1/indexl2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml/handl/indexl1/indexl2/indexl3
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml/handl/indexl1/indexl2/indexl3/indexl3_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml/handl/midlel1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml/handl/midlel1/midlel2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml/handl/midlel1/midlel2/midlel3
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml/handl/midlel1/midlel2/midlel3/midlel3_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml/handl/pinkyl1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml/handl/pinkyl1/Pinkyl2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml/handl/pinkyl1/Pinkyl2/pinkyl3
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml/handl/pinkyl1/Pinkyl2/pinkyl3/pinkyl3_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml/handl/ringl1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml/handl/ringl1/ringl2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml/handl/ringl1/ringl2/ringl3
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml/handl/ringl1/ringl2/ringl3/ringl3_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml/handl/thumbl1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml/handl/thumbl1/thuml2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl/arml/forearml/handl/thumbl1/thuml2/thuml2_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001/handl.001
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001/handl.001/indexl1.001
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001/handl.001/indexl1.001/indexl2.001
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001/handl.001/indexl1.001/indexl2.001/indexl3.001
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001/handl.001/indexl1.001/indexl2.001/indexl3.001/indexl3.001_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001/handl.001/midlel1.001
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001/handl.001/midlel1.001/midlel2.001
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001/handl.001/midlel1.001/midlel2.001/midlel3.001
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001/handl.001/midlel1.001/midlel2.001/midlel3.001/midlel3.001_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001/handl.001/pinkyr1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001/handl.001/pinkyr1/Pinkyr2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001/handl.001/pinkyr1/Pinkyr2/pinkyl3.001
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001/handl.001/pinkyr1/Pinkyr2/pinkyl3.001/pinkyl3.001_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001/handl.001/ringl1.001
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001/handl.001/ringl1.001/ringl2.001
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001/handl.001/ringl1.001/ringl2.001/ringl3.001
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001/handl.001/ringl1.001/ringl2.001/ringl3.001/ringl3.001_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001/handl.001/thumbl1.001
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001/handl.001/thumbl1.001/thuml2.001
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/arml.001/forearml.001/handl.001/thumbl1.001/thuml2.001/thuml2.001_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Capel1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Capel1/Capel2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Capel1/Capel2/Capel3
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Capel1/Capel2/Capel3/Capel4
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Capel1/Capel2/Capel3/Capel4/Capel4_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Capelb1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Capelb1/Capelb2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Capelb1/Capelb2/Capelb3
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Capelb1/Capelb2/Capelb3/Capelb4
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Capelb1/Capelb2/Capelb3/Capelb4/Capelb4_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Capem1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Capem1/Capem2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Capem1/Capem2/Capem3
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Capem1/Capem2/Capem3/CapeM4
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Capem1/Capem2/Capem3/CapeM4/CapeM4_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Capemb1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Capemb1/Capemb2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Capemb1/Capemb2/Capemb3
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Capemb1/Capemb2/Capemb3/Capemb4
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Capemb1/Capemb2/Capemb3/Capemb4/Capemb4_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Caper1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Caper1/Caper2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Caper1/Caper2/Caper3
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Caper1/Caper2/Caper3/Caper3_end
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Caperb1
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Caperb1/Caperb2
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Caperb1/Caperb2/Caperb3
+    m_Weight: 1
+  - m_Path: Armature.001/pelvis/spine/torax/Sholderl.001/Caperb1/Caperb2/Caperb3/Caperb3_end
+    m_Weight: 1
+  - m_Path: beard.001
+    m_Weight: 1
+  - m_Path: blouse.001
+    m_Weight: 1
+  - m_Path: Camera.002
+    m_Weight: 0
+  - m_Path: cape.002
+    m_Weight: 1
+  - m_Path: Empty.001
+    m_Weight: 1
+  - m_Path: Empty.002
+    m_Weight: 1
+  - m_Path: eyebrows.001
+    m_Weight: 1
+  - m_Path: feet.001
+    m_Weight: 0
+  - m_Path: Hair.001
+    m_Weight: 1
+  - m_Path: Hairstrand.001
+    m_Weight: 1
+  - m_Path: Hands.001
+    m_Weight: 1
+  - m_Path: Head.002
+    m_Weight: 1
+  - m_Path: Lamp.006
+    m_Weight: 0
+  - m_Path: Lamp.007
+    m_Weight: 0
+  - m_Path: Lamp.008
+    m_Weight: 0
+  - m_Path: mustache.001
+    m_Weight: 1
+  - m_Path: pants.001
+    m_Weight: 0
+  - m_Path: turbant.002
+    m_Weight: 1
+  - m_Path: turbant.003
+    m_Weight: 1
