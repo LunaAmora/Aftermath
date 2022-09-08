@@ -364,7 +364,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974863289343909905}
   m_LocalRotation: {x: 0.7071067, y: -0.00000006322024, z: -0.000000105367064, w: 0.7071068}
-  m_LocalPosition: {x: -0.00013, y: -0.01275, z: 0.02745}
+  m_LocalPosition: {x: -0.00013, y: -0.01373, z: 0.02745}
   m_LocalScale: {x: 0.009999999, y: 0.010000002, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2270,7 +2270,6 @@ GameObject:
   - component: {fileID: 5544993663092201366}
   - component: {fileID: 5225831187161012634}
   - component: {fileID: 8400723300400675575}
-  - component: {fileID: 3658998811727849284}
   m_Layer: 0
   m_Name: PlayerModel
   m_TagString: Untagged
@@ -2338,20 +2337,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!136 &3658998811727849284
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5167905823474011436}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.65
-  m_Height: 4
-  m_Direction: 1
-  m_Center: {x: 0, y: 1.91, z: 0}
 --- !u!1 &5259998874926160828
 GameObject:
   m_ObjectHideFlags: 0
@@ -4282,6 +4267,7 @@ MonoBehaviour:
   _projPrefab: {fileID: 4343771861401548176, guid: 49d38b9c0624d56408f3604f45f8a73e,
     type: 3}
   _projForce: 1000
+  _animator: {fileID: 1032996687051686169}
 --- !u!4 &1147018106859410879 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: aa88e7d72ab27b24abbaef09896b3b27,

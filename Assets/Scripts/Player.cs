@@ -7,6 +7,7 @@ namespace Aftermath
         [Space(10)]
         [SerializeField] private InputReader _input;
         [SerializeField] private PlayerModel _model;
+        [SerializeField] private Rigidbody _rigidbody;
 
         private float _lookAngle;
         private Vector3 _moveDir;
@@ -32,16 +33,20 @@ namespace Aftermath
 
         void Update()
         {
-            Move();
             LookAt();
             Animate();
+        }
+
+        void FixedUpdate()
+        {
+            Move();
         }
 
         void Move()
         {
             if (_moveDir != Vector3.zero)
             {
-                transform.Translate(_moveDir * _speed * Time.deltaTime, Space.World);
+                _rigidbody.MovePosition(transform.position + (_moveDir * _speed * Time.deltaTime));
             }
         }
 
