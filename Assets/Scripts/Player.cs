@@ -4,9 +4,7 @@ namespace Aftermath
 {
     public class Player : Entity
     {
-        [SerializeField] private float _speed;
         [Space(10)]
-
         [SerializeField] private InputReader _input;
         [SerializeField] private PlayerModel _model;
 
