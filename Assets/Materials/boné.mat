@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: tenis
+  m_Name: "bon\xE9"
   m_Shader: {fileID: -6465566751694194690, guid: 40f891ceea86bc043a9a964e008f7a18,
     type: 3}
   m_ValidKeywords: []
