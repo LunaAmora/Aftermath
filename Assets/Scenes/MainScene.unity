@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -768,6 +768,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelBaskhara
       objectReference: {fileID: 0}
+    - target: {fileID: 1906006766921581616, guid: 324187b880b024a47b721d78db6b8e58,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d1076ab91fa98fb40aedf022ce435986, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 324187b880b024a47b721d78db6b8e58, type: 3}
 --- !u!4 &2085818771 stripped
@@ -931,6 +936,11 @@ PrefabInstance:
       propertyPath: _target
       value: 
       objectReference: {fileID: 925986529}
+    - target: {fileID: 6200439433988571006, guid: 17e6b968247314046b798ffa8c6a6c61,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17e6b968247314046b798ffa8c6a6c61, type: 3}
 --- !u!1001 &5084815832380422890
