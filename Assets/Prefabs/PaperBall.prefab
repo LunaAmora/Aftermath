@@ -48,6 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d18e2682c8478e4f9cea02f792ee57b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _duration: 2
+  _damage: 10
 --- !u!33 &3566534297524422846
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -106,7 +108,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5143275876186780375}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5

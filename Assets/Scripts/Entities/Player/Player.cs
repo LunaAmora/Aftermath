@@ -24,6 +24,7 @@ namespace Aftermath
             _input.OnMoveDirection += MoveDir;
             _input.OnMouseMove += LookDir;
             _input.OnMouseClick += Shoot;
+            _input.OnMouseRelease += ShootRelease;
             _input.OnCameraChange += CameraChange;
             _plane = new Plane(Vector3.up, transform.position);
             _flyPlane = new Plane(Vector3.back, _stage.transform.position);
@@ -88,25 +89,12 @@ namespace Aftermath
             }
         }
 
-        void LookDir(Vector2 dir)
-        {
-            _mousePos = dir;
-        }
+        void LookDir(Vector2 dir) => _mousePos = dir;
+        void MoveDir(Vector2 dir) => _moveDir = new Vector3(dir.x, 0, dir.y).normalized;
 
-        void MoveDir(Vector2 dir)
-        {
-            _moveDir = new Vector3(dir.x, 0, dir.y).normalized;
-        }
+        void Shoot() => _model.Shoot(() => _lookDir);
+        void ShootRelease() => _model.ShootRelease();
 
-        void Shoot()
-        {
-            var dir = _focusMode ? _lookDir : Vector3.forward;
-            _model.Shoot(dir);
-        }
-
-        void CameraChange()
-        {
-            _focusMode = !_focusMode;
-        }
+        void CameraChange() => _focusMode = !_focusMode;
     }
 }

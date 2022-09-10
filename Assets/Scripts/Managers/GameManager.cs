@@ -10,6 +10,8 @@ namespace Aftermath
         [SerializeField] private Transform _world;
         [SerializeField] private CinemachineVirtualCamera _focusCam;
         [SerializeField] private InputReader _input;
+
+        [Space(10)]
         [EnumNamedList(typeof(LevelEnum))]
         [SerializeField] private List<Level> _levels;
 

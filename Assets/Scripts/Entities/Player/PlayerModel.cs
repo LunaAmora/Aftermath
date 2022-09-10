@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Aftermath
@@ -10,7 +11,7 @@ namespace Aftermath
 
         private bool _shooting;
         private float _lastDir;
-        private Vector3 _dir;
+        private Func<Vector3> _dir;
 
         public void LookAt(float angle)
         {
@@ -24,17 +25,22 @@ namespace Aftermath
             _animator.SetFloat("ZDir", dir.y);
         }
 
-        public void Shoot(Vector3 dir)
+        public void Shoot(Func<Vector3> dir)
         {
             _dir = dir;
             _shooting = true;
-            _animator.SetTrigger("Shoot");
+            _animator.SetBool("ShootHold", true);
+        }
+
+        public void ShootRelease()
+        {
+            _animator.SetBool("ShootHold", false);
+            _shooting = false;
         }
 
         public void AnimEventShoot()
         {
-            _weapon.Shoot(_dir);
-            _shooting = false;
+            _weapon.Shoot(_dir());
         }
 
         void LateUpdate()
