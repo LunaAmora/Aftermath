@@ -1,18 +1,44 @@
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using UnityEngine;
 
 namespace Aftermath
 {
     public class MenuManager : MonoBehaviour
     {
-        [SerializeField] private Button _play_Button;
-        [SerializeField] private Button _exit_Button;
+        [SerializeField] private MenuButton _playButton;
+        [SerializeField] private MenuButton _exitButton;
+        [SerializeField] private InputReader _input;
 
         void Start()
         {
-            _play_Button.onClick.AddListener(OnPlay);
-            _exit_Button.onClick.AddListener(OnExit);
+            _input.OnMouseClick += MouseClick;
+            _input.Initialize();
+        }
+
+        void OnDestroy()
+        {
+            _input.OnMouseClick -= MouseClick;
+        }
+
+        void MouseClick()
+        {
+            Ray ray = Camera.main.ScreenPointToRay(_input.MousePos);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 100))
+            {
+                var button = hit.collider.gameObject.GetComponent<MenuButton>();
+                if (button is null) return;
+
+                if (button.Equals(_playButton))
+                {
+                    OnPlay();
+                }
+                else if (button.Equals(_exitButton))
+                {
+                    OnExit();
+                }
+            }
         }
 
         void OnPlay()

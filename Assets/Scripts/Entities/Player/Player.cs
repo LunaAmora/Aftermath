@@ -13,41 +13,38 @@ namespace Aftermath
         private float _lookAngle;
         private Vector3 _lookDir;
         private Vector3 _moveDir;
-        private Vector2 _mousePos;
         private Plane _plane;
         private Plane _flyPlane;
 
         private bool _focusMode = false;
 
-        void Start()
+        public void Initialize()
         {
             _input.OnMoveDirection += MoveDir;
-            _input.OnMouseMove += LookDir;
             _input.OnMouseClick += Shoot;
             _input.OnMouseRelease += ShootRelease;
             _input.OnCameraChange += CameraChange;
             _plane = new Plane(Vector3.up, transform.position);
             _flyPlane = new Plane(Vector3.back, _stage.transform.position);
-
-            _input.Initialize();
         }
 
         void OnDestroy()
         {
             _input.OnMoveDirection -= MoveDir;
-            _input.OnMouseMove -= LookDir;
             _input.OnMouseClick -= Shoot;
             _input.OnCameraChange -= CameraChange;
         }
 
         void Update()
         {
+            if (GameManager.Instance.isPaused) return;
             LookAt();
             Animate();
         }
 
         void FixedUpdate()
         {
+            if (GameManager.Instance.isPaused) return;
             Move();
         }
 
@@ -62,7 +59,7 @@ namespace Aftermath
         void LookAt()
         {
             float distance;
-            Ray ray = Camera.main.ScreenPointToRay(_mousePos);
+            Ray ray = Camera.main.ScreenPointToRay(_input.MousePos);
             var plane = _focusMode ? _flyPlane : _plane;
 
             if (plane.Raycast(ray, out distance))
@@ -89,12 +86,19 @@ namespace Aftermath
             }
         }
 
-        void LookDir(Vector2 dir) => _mousePos = dir;
+        void CameraChange() => _focusMode = !_focusMode;
         void MoveDir(Vector2 dir) => _moveDir = new Vector3(dir.x, 0, dir.y).normalized;
 
-        void Shoot() => _model.Shoot(() => _lookDir);
-        void ShootRelease() => _model.ShootRelease();
+        void Shoot()
+        {
+            if (GameManager.Instance.isPaused) return;
+            _model.Shoot(() => _lookDir);
+        }
 
-        void CameraChange() => _focusMode = !_focusMode;
+        void ShootRelease()
+        {
+            if (GameManager.Instance.isPaused) return;
+            _model.ShootRelease();
+        }
     }
 }

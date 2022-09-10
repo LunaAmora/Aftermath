@@ -10,6 +10,8 @@ namespace Aftermath
         [SerializeField] private Transform _world;
         [SerializeField] private CinemachineVirtualCamera _focusCam;
         [SerializeField] private InputReader _input;
+        [SerializeField] private MenuButton _pauseButton;
+        [SerializeField] private Player _player;
 
         [Space(10)]
         [EnumNamedList(typeof(LevelEnum))]
@@ -23,6 +25,8 @@ namespace Aftermath
 
         public static GameManager Instance;
 
+        private bool _isPauseHovered = false;
+
         void Start()
         {
             Instance = this;
@@ -31,12 +35,20 @@ namespace Aftermath
                 LoadCurrent();
             }
 
+            _pauseButton.OnHighlighted += () => _isPauseHovered = true;
+            _pauseButton.OnExit += () => _isPauseHovered = false;
+
             _input.OnCameraChange += CameraChange;
+            _input.OnMouseClick += CheckPause;
+
+            _player.Initialize();
+            _input.Initialize();
         }
 
         void OnDestroy()
         {
             _input.OnCameraChange -= CameraChange;
+            _input.OnMouseClick -= CheckPause;
         }
 
         [ContextMenu("Load Scene")]
@@ -101,6 +113,21 @@ namespace Aftermath
 
             var priority = _focusMode ? 10 : 0;
             _focusCam.Priority = priority;
+        }
+
+        void CheckPause()
+        {
+            if (_isPauseHovered)
+            {
+                Pause();
+            }
+        }
+
+        void Pause(bool value = true)
+        {
+            isPaused = value;
+            Time.timeScale = value ? 0 : 1;
+            _pauseButton.gameObject.SetActive(!value);
         }
     }
 

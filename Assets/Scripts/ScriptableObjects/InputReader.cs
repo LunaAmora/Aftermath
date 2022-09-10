@@ -14,7 +14,15 @@ namespace Aftermath
         public event Action OnMouseRelease;
         public event Action OnCameraChange;
 
-        private GameInput _gameInput;
+        public Vector2 MousePos {get; private set;}
+
+        private static GameInput _gameInput;
+
+        private bool InputActive()
+        {
+            var gm = GameManager.Instance;
+            return (gm is null || !gm.isPaused);
+        }
 
         public void Initialize()
         {
@@ -22,22 +30,19 @@ namespace Aftermath
             {
                 _gameInput = new GameInput();
                 _gameInput.Battle.SetCallbacks(this);
+                _gameInput.Enable();
             }
-            _gameInput.Enable();
         }
 
         public void OnClick(InputAction.CallbackContext context)
         {
-            if (!GameManager.Instance.isPaused )
-            {
-                if (context.started) OnMouseClick?.Invoke();
-                else if (context.canceled) OnMouseRelease?.Invoke();
-            }
+            if (context.started) OnMouseClick?.Invoke();
+            else if (context.canceled) OnMouseRelease?.Invoke();
         }
 
         public void OnLeftClick(InputAction.CallbackContext context)
         {
-            if (!GameManager.Instance.isPaused)
+            if (InputActive())
             {
                 OnCameraChange?.Invoke();
             }
@@ -45,15 +50,16 @@ namespace Aftermath
 
         public void OnMousePos(InputAction.CallbackContext context)
         {
-            if (!GameManager.Instance.isPaused)
+            if (InputActive())
             {
-                OnMouseMove?.Invoke(context.ReadValue<Vector2>());
+                MousePos = context.ReadValue<Vector2>();
+                OnMouseMove?.Invoke(MousePos);
             }
         }
 
         public void OnMove(InputAction.CallbackContext context)
         {
-            if (!GameManager.Instance.isPaused)
+            if (InputActive())
             {
                 OnMoveDirection?.Invoke(context.ReadValue<Vector2>());
             }
