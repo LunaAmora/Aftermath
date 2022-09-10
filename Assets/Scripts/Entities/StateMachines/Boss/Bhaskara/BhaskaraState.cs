@@ -72,22 +72,30 @@ namespace Aftermath
                 _stateMachine.SwitchState(new FlyingState(_stateMachine));
             }
         }
+    }
 
-        public class FlyingState : BhaskaraState
+    public class FlyingState : BhaskaraState
+    {
+        public FlyingState(StateMachine<Bhaskara> machine) : base(machine) {}
+
+        private bool _started = false;
+
+        public override void Enter()
         {
-            public FlyingState(StateMachine<Bhaskara> machine) : base(machine) {}
+            Entity.SetIdle();
+            Entity.SetFlying();
+            var transform = Entity.transform;
+            transform.LookAt(transform.position + Vector3.back);
+            var anim = transform.LeanMove(Entity.FlyStage.GetPosition(new Vector2(0.5f, 0.5f)), 2f);
 
-            public override void Enter()
-            {
-                Entity.SetIdle();
-                Entity.SetFlying();
-                var transform = Entity.transform;
-                transform.LookAt(transform.position + Vector3.back);
-                transform.LeanMove(Entity.FlyStage.GetPosition(new Vector2(0.5f, 0.5f)), 2f);
-            }
+            anim.setOnComplete(() => _started = true);
+        }
 
-            public override void Exit() {}
-            public override void Tick(float deltaTime) {}
+        public override void Exit() {}
+
+        public override void Tick(float deltaTime)
+        {
+            if(!_started) return;
         }
     }
 }
