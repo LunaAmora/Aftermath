@@ -8,7 +8,7 @@ namespace Aftermath
         [SerializeField] private float _maxHealth = 100;
         [ReadOnly] [SerializeField] private float _health;
         [SerializeField] private bool _invulnerable;
-        [SerializeField] protected float _speed;
+        public float _speed;
 
         public event Action OnDeath;
         public event Action OnDamaged;

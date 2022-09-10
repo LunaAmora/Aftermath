@@ -4,6 +4,8 @@ namespace Aftermath
     {
         protected StateMachine<T> _stateMachine;
 
+        public T Entity => _stateMachine.Entity;
+
         public State(StateMachine<T> machine)
         {
             _stateMachine = machine;

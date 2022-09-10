@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -830,7 +830,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1565959646 stripped
 Transform:
@@ -1002,6 +1002,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 950758602585693519, guid: 324187b880b024a47b721d78db6b8e58,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1050215154898480347, guid: 324187b880b024a47b721d78db6b8e58,
         type: 3}
       propertyPath: m_Name
@@ -1115,6 +1120,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aaf82ca8f986e304f941bd3febcb41e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2085818773 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3062065213167976487, guid: 324187b880b024a47b721d78db6b8e58,
+    type: 3}
+  m_PrefabInstance: {fileID: 2085818770}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ac90fe32b5b40443ade88feae9516d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2133259618
@@ -1382,11 +1399,11 @@ PrefabInstance:
       propertyPath: _target
       value: 
       objectReference: {fileID: 925986529}
-    - target: {fileID: 6200439433988571006, guid: 17e6b968247314046b798ffa8c6a6c61,
+    - target: {fileID: 3326166805599061706, guid: 17e6b968247314046b798ffa8c6a6c61,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: _flyStage
+      value: 
+      objectReference: {fileID: 2085818773}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17e6b968247314046b798ffa8c6a6c61, type: 3}
 --- !u!1001 &5084815832380422890
@@ -1396,11 +1413,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 467841200}
     m_Modifications:
-    - target: {fileID: 2127427555668393797, guid: cf2d721303f32564fbf5587f49031911,
-        type: 3}
-      propertyPath: m_WarningMessage
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5084815832599516170, guid: cf2d721303f32564fbf5587f49031911,
         type: 3}
       propertyPath: m_Name
@@ -1461,15 +1473,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8171874772556474268, guid: cf2d721303f32564fbf5587f49031911,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: ace24393283c2eb4daefd328a5e6ca37, type: 2}
-    - target: {fileID: 8525054991985298482, guid: cf2d721303f32564fbf5587f49031911,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d39bc80fa6615694297ff85f0dc0d88b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf2d721303f32564fbf5587f49031911, type: 3}

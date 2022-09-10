@@ -1,6 +1,4 @@
 namespace Aftermath
 {
-    public class BhaskaraStateMachine : StateMachine<Bhaskara>
-    {
-    }
+    public class BhaskaraStateMachine : StateMachine<Bhaskara> {}
 }

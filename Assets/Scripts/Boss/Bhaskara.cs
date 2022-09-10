@@ -7,26 +7,35 @@ namespace Aftermath
     {
         [SerializeField] private Animator _animator;
         [SerializeField] private Transform _target;
+        [SerializeField] private BossFlyingStage _flyStage;
 
-        public bool Moving {get; private set;} = false;
+        public Transform Target => _target;
+        public BossFlyingStage FlyStage => _flyStage;
 
         private BhaskaraStateMachine _state;
 
         void Start()
         {
             _state = GetComponent<BhaskaraStateMachine>();
+            Idle();
         }
 
-        void Update()
+        [ContextMenu("Idle")]
+        public void Idle()
         {
-            var target = _target.position;
-            target.y = 0;
-            transform.LookAt(target);
+            _state.SwitchState(new IdleLook(_state));
+        }
 
-            if (Moving)
-            {
-                transform.Translate(transform.forward * _speed * Time.deltaTime, Space.World);
-            }
+        [ContextMenu("Follow")]
+        public void Follow()
+        {
+            _state.SwitchState(new FollowTarget(_state));
+        }
+
+        [ContextMenu("Prepare to fly")]
+        public void Fly()
+        {
+            _state.SwitchState(new PrepareToFly(_state));
         }
 
         public void LookAt(Vector3 dir)
@@ -42,7 +51,6 @@ namespace Aftermath
         public void SetIdle(bool value = true)
         {
             _animator.SetBool("Idle", value);
-            Moving = !value;
         }
 
         public void Attack()

@@ -54,6 +54,7 @@ MonoBehaviour:
   _speed: 5
   _animator: {fileID: 1565959649}
   _target: {fileID: 0}
+  _flyStage: {fileID: 0}
 --- !u!114 &390707821553317246
 MonoBehaviour:
   m_ObjectHideFlags: 0
