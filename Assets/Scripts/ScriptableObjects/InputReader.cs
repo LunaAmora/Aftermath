@@ -11,6 +11,7 @@ namespace Aftermath
         public event Action<Vector2> OnMoveDirection;
         public event Action<Vector2> OnMouseMove;
         public event Action OnMouseClick;
+        public event Action OnCameraChange;
 
         private GameInput _gameInput;
 
@@ -29,6 +30,14 @@ namespace Aftermath
             if (!GameManager.Instance.isPaused && context.performed)
             {
                 OnMouseClick?.Invoke();
+            }
+        }
+
+        public void OnLeftClick(InputAction.CallbackContext context)
+        {
+            if (!GameManager.Instance.isPaused)
+            {
+                OnCameraChange?.Invoke();
             }
         }
 

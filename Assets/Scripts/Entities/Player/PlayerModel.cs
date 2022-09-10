@@ -10,6 +10,7 @@ namespace Aftermath
 
         private bool _shooting;
         private float _lastDir;
+        private Vector3 _dir;
 
         public void LookAt(float angle)
         {
@@ -23,15 +24,16 @@ namespace Aftermath
             _animator.SetFloat("ZDir", dir.y);
         }
 
-        public void Shoot()
+        public void Shoot(Vector3 dir)
         {
+            _dir = dir;
             _shooting = true;
             _animator.SetTrigger("Shoot");
         }
 
         public void AnimEventShoot()
         {
-            _weapon.Shoot(transform.forward);
+            _weapon.Shoot(_dir);
             _shooting = false;
         }
 

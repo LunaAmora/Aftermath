@@ -8,18 +8,25 @@ namespace Aftermath
         [SerializeField] private InputReader _input;
         [SerializeField] private PlayerModel _model;
         [SerializeField] private Rigidbody _rigidbody;
+        [SerializeField] private BossFlyingStage _stage;
 
         private float _lookAngle;
+        private Vector3 _lookDir;
         private Vector3 _moveDir;
         private Vector2 _mousePos;
         private Plane _plane;
+        private Plane _flyPlane;
+
+        private bool _focusMode = false;
 
         void Start()
         {
             _input.OnMoveDirection += MoveDir;
             _input.OnMouseMove += LookDir;
             _input.OnMouseClick += Shoot;
+            _input.OnCameraChange += CameraChange;
             _plane = new Plane(Vector3.up, transform.position);
+            _flyPlane = new Plane(Vector3.back, _stage.transform.position);
 
             _input.Initialize();
         }
@@ -29,6 +36,7 @@ namespace Aftermath
             _input.OnMoveDirection -= MoveDir;
             _input.OnMouseMove -= LookDir;
             _input.OnMouseClick -= Shoot;
+            _input.OnCameraChange -= CameraChange;
         }
 
         void Update()
@@ -54,11 +62,13 @@ namespace Aftermath
         {
             float distance;
             Ray ray = Camera.main.ScreenPointToRay(_mousePos);
-            if (_plane.Raycast(ray, out distance))
+            var plane = _focusMode ? _flyPlane : _plane;
+
+            if (plane.Raycast(ray, out distance))
             {
                 var worldPosition = ray.GetPoint(distance);
-                var lookDir = (worldPosition - transform.position).normalized;
-                _lookAngle = Vector3.SignedAngle(lookDir, transform.forward, Vector3.down);
+                _lookDir = (worldPosition - transform.position).normalized;
+                _lookAngle = Vector3.SignedAngle(_lookDir, transform.forward, Vector3.down);
                 _model.LookAt(_lookAngle);
             }
         }
@@ -90,7 +100,13 @@ namespace Aftermath
 
         void Shoot()
         {
-            _model.Shoot();
+            var dir = _focusMode ? _lookDir : Vector3.forward;
+            _model.Shoot(dir);
+        }
+
+        void CameraChange()
+        {
+            _focusMode = !_focusMode;
         }
     }
 }

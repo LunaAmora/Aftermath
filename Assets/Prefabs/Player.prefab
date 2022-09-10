@@ -54,6 +54,7 @@ MonoBehaviour:
   _input: {fileID: 11400000, guid: 3b9aeddef298d1f449a29f2440942d60, type: 2}
   _model: {fileID: 2420289545726893096}
   _rigidbody: {fileID: 668912905592643157}
+  _stage: {fileID: 0}
 --- !u!136 &2147757115950743415
 CapsuleCollider:
   m_ObjectHideFlags: 0

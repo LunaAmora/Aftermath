@@ -55,6 +55,15 @@ namespace Aftermath
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LeftClick"",
+                    ""type"": ""Button"",
+                    ""id"": ""4889fcd0-f1fd-4e87-bf98-9a70f624e473"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -134,6 +143,17 @@ namespace Aftermath
                     ""action"": ""Click"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a817115e-5369-4fa2-9a8f-3fc798ffebcc"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -145,6 +165,7 @@ namespace Aftermath
             m_Battle_Move = m_Battle.FindAction("Move", throwIfNotFound: true);
             m_Battle_MousePos = m_Battle.FindAction("MousePos", throwIfNotFound: true);
             m_Battle_Click = m_Battle.FindAction("Click", throwIfNotFound: true);
+            m_Battle_LeftClick = m_Battle.FindAction("LeftClick", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -207,6 +228,7 @@ namespace Aftermath
         private readonly InputAction m_Battle_Move;
         private readonly InputAction m_Battle_MousePos;
         private readonly InputAction m_Battle_Click;
+        private readonly InputAction m_Battle_LeftClick;
         public struct BattleActions
         {
             private @GameInput m_Wrapper;
@@ -214,6 +236,7 @@ namespace Aftermath
             public InputAction @Move => m_Wrapper.m_Battle_Move;
             public InputAction @MousePos => m_Wrapper.m_Battle_MousePos;
             public InputAction @Click => m_Wrapper.m_Battle_Click;
+            public InputAction @LeftClick => m_Wrapper.m_Battle_LeftClick;
             public InputActionMap Get() { return m_Wrapper.m_Battle; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -232,6 +255,9 @@ namespace Aftermath
                     @Click.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnClick;
                     @Click.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnClick;
                     @Click.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnClick;
+                    @LeftClick.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnLeftClick;
+                    @LeftClick.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnLeftClick;
+                    @LeftClick.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnLeftClick;
                 }
                 m_Wrapper.m_BattleActionsCallbackInterface = instance;
                 if (instance != null)
@@ -245,6 +271,9 @@ namespace Aftermath
                     @Click.started += instance.OnClick;
                     @Click.performed += instance.OnClick;
                     @Click.canceled += instance.OnClick;
+                    @LeftClick.started += instance.OnLeftClick;
+                    @LeftClick.performed += instance.OnLeftClick;
+                    @LeftClick.canceled += instance.OnLeftClick;
                 }
             }
         }
@@ -254,6 +283,7 @@ namespace Aftermath
             void OnMove(InputAction.CallbackContext context);
             void OnMousePos(InputAction.CallbackContext context);
             void OnClick(InputAction.CallbackContext context);
+            void OnLeftClick(InputAction.CallbackContext context);
         }
     }
 }

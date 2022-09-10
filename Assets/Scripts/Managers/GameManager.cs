@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEditor;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ namespace Aftermath
     public class GameManager : MonoBehaviour
     {
         [SerializeField] private Transform _world;
+        [SerializeField] private CinemachineVirtualCamera _focusCam;
+        [SerializeField] private InputReader _input;
         [EnumNamedList(typeof(LevelEnum))]
         [SerializeField] private List<Level> _levels;
 
@@ -14,6 +17,7 @@ namespace Aftermath
         [ReadOnly] [SerializeField] private Level _levelObject = null;
 
         [HideInInspector] public bool isPaused = false;
+        private bool _focusMode = false;
 
         public static GameManager Instance;
 
@@ -24,6 +28,13 @@ namespace Aftermath
             {
                 LoadCurrent();
             }
+
+            _input.OnCameraChange += CameraChange;
+        }
+
+        void OnDestroy()
+        {
+            _input.OnCameraChange -= CameraChange;
         }
 
         [ContextMenu("Load Scene")]
@@ -80,6 +91,14 @@ namespace Aftermath
             {
                 Debug.Log("Tryed to load a level out of the LevelEnum definition");
             }
+        }
+
+        void CameraChange()
+        {
+            _focusMode = !_focusMode;
+
+            var priority = _focusMode ? 10 : 0;
+            _focusCam.Priority = priority;
         }
     }
 
