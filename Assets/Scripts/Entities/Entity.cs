@@ -13,6 +13,8 @@ namespace Aftermath
         public event Action OnDeath;
         public event Action OnDamaged;
 
+        public float HealthPercent => _health/_maxHealth;
+
         void Awake()
         {
             _health = _maxHealth;

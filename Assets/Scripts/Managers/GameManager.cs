@@ -138,7 +138,7 @@ namespace Aftermath
             _pauseMenu.gameObject.SetActive(value);
         }
 
-        void ExitToMenu()
+        public void ExitToMenu()
         {
             Time.timeScale = 1;
             SceneManager.LoadScene("Menu");

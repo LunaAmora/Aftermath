@@ -26,9 +26,23 @@ namespace Aftermath
     {
         public IdleLook(StateMachine<Bhaskara> machine) : base(machine) {}
 
-        public override void Enter() => Entity.SetIdle();
+        public override void Enter()
+        {
+            Entity.SetIdle();
+            Entity.OnDamaged += ChangeToFollow;
+        }
+
         public override void Tick(float deltaTime) => LookAtTarget();
-        public override void Exit() {}
+
+        public override void Exit()
+        {
+            Entity.OnDamaged -= ChangeToFollow;
+        }
+
+        void ChangeToFollow()
+        {
+            _stateMachine.SwitchState(new FollowTarget(_stateMachine));
+        }
     }
 
     public class FollowTarget : BhaskaraState
@@ -36,13 +50,21 @@ namespace Aftermath
         public FollowTarget(StateMachine<Bhaskara> machine) : base(machine) {}
 
         public override void Enter() => Entity.SetIdle(false);
-        public override void Exit() {}
 
         public override void Tick(float deltaTime)
         {
-            LookAtTarget();
-            MoveFoward(deltaTime);
+            if (Entity.HealthPercent > 0.2f)
+            {
+                LookAtTarget();
+                MoveFoward(deltaTime);
+            }
+            else
+            {
+                _stateMachine.SwitchState(new PrepareToFly(_stateMachine));
+            }
         }
+
+        public override void Exit() {}
     }
 
     public class PrepareToFly : BhaskaraState
@@ -95,7 +117,7 @@ namespace Aftermath
 
         public override void Tick(float deltaTime)
         {
-            if(!_started) return;
+            if (!_started) return;
         }
     }
 }
