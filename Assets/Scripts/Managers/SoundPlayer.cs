@@ -21,6 +21,7 @@ namespace Aftermath
             BhaskaraIntro,
             Bhaskara,
             VitoriaPlayer,
+            Cutsene,
         }
 
         public enum AudioEnum

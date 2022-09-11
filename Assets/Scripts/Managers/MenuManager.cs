@@ -44,7 +44,7 @@ namespace Aftermath
 
         void OnPlay()
         {
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene("CutScene");
         }
 
         void OnExit()
