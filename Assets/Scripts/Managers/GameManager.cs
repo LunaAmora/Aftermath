@@ -1,3 +1,4 @@
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEditor;
@@ -11,6 +12,7 @@ namespace Aftermath
         [SerializeField] private CinemachineVirtualCamera _focusCam;
         [SerializeField] private InputReader _input;
         [SerializeField] private MenuButton _pauseButton;
+        [SerializeField] private PauseMenu _pauseMenu;
         [SerializeField] private Player _player;
 
         [Space(10)]
@@ -30,6 +32,7 @@ namespace Aftermath
         void Start()
         {
             Instance = this;
+
             if (_levelObject == null)
             {
                 LoadCurrent();
@@ -37,6 +40,9 @@ namespace Aftermath
 
             _pauseButton.OnHighlighted += () => _isPauseHovered = true;
             _pauseButton.OnExit += () => _isPauseHovered = false;
+
+            _pauseMenu.OnExit += ExitToMenu;
+            _pauseMenu.OnPlay += () => Pause(false);
 
             _input.OnCameraChange += CameraChange;
             _input.OnMouseClick += CheckPause;
@@ -119,6 +125,7 @@ namespace Aftermath
         {
             if (_isPauseHovered)
             {
+                _isPauseHovered = false;
                 Pause();
             }
         }
@@ -128,6 +135,13 @@ namespace Aftermath
             isPaused = value;
             Time.timeScale = value ? 0 : 1;
             _pauseButton.gameObject.SetActive(!value);
+            _pauseMenu.gameObject.SetActive(value);
+        }
+
+        void ExitToMenu()
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene("Menu");
         }
     }
 

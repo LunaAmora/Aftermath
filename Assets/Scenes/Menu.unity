@@ -123,6 +123,30 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &310442008 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7809864690270015369, guid: 356f107f2fc236647ba4f761ac722897,
+    type: 3}
+  m_PrefabInstance: {fileID: 2881940322469617050}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766194f65ee273b4e888c6a10ecbc01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &405419019 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7147232860138973852, guid: 356f107f2fc236647ba4f761ac722897,
+    type: 3}
+  m_PrefabInstance: {fileID: 2881940322469617050}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766194f65ee273b4e888c6a10ecbc01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1076427507
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,8 +424,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5599a04a804076440ab8ed7d69346592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playButton: {fileID: 0}
-  _exitButton: {fileID: 0}
+  _playButton: {fileID: 310442008}
+  _exitButton: {fileID: 405419019}
   _input: {fileID: 11400000, guid: 3b9aeddef298d1f449a29f2440942d60, type: 2}
 --- !u!1 &2131210142
 GameObject:

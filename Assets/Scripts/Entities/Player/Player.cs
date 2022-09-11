@@ -33,6 +33,7 @@ namespace Aftermath
             _input.OnMoveDirection -= MoveDir;
             _input.OnMouseClick -= Shoot;
             _input.OnCameraChange -= CameraChange;
+            _input.OnMouseRelease -= ShootRelease;
         }
 
         void Update()

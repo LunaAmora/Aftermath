@@ -50,9 +50,9 @@ namespace Aftermath
 
         public void OnMousePos(InputAction.CallbackContext context)
         {
+            MousePos = context.ReadValue<Vector2>();
             if (InputActive())
             {
-                MousePos = context.ReadValue<Vector2>();
                 OnMouseMove?.Invoke(MousePos);
             }
         }
