@@ -1241,7 +1241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2133259619
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1487,6 +1487,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BhaskaraBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326166805599061706, guid: 17e6b968247314046b798ffa8c6a6c61,
+        type: 3}
+      propertyPath: _speed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3326166805599061706, guid: 17e6b968247314046b798ffa8c6a6c61,
         type: 3}
