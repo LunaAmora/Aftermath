@@ -18,6 +18,7 @@ namespace Aftermath
         {
             OnDeath += () => GameManager.Instance.ExitToMenu();
             _state = GetComponent<BhaskaraStateMachine>();
+            _state.Initialize(this);
             Idle();
         }
 
