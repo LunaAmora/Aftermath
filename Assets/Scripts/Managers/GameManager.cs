@@ -23,6 +23,7 @@ namespace Aftermath
         [ReadOnly] [SerializeField] private Level _levelObject = null;
 
         [HideInInspector] public bool isPaused = false;
+        private SoundPlayer _soundplayer;
         private bool _focusMode = false;
 
         public static GameManager Instance;
@@ -49,12 +50,23 @@ namespace Aftermath
 
             _player.Initialize();
             _input.Initialize();
+
+            _soundplayer = SoundPlayer.Instance;
+            _soundplayer.SetMusic(SoundPlayer.MusicEnum.BhaskaraIntro);
+            _soundplayer.OnMusicEnd += ()
+                => _soundplayer.SetMusic(SoundPlayer.MusicEnum.Bhaskara, true);
         }
 
         void OnDestroy()
         {
             _input.OnCameraChange -= CameraChange;
             _input.OnMouseClick -= CheckPause;
+        }
+
+        public void Victory()
+        {
+            _soundplayer.SetMusic(SoundPlayer.MusicEnum.VitoriaPlayer);
+            _soundplayer.OnMusicEnd += ExitToMenu;
         }
 
         [ContextMenu("Load Scene")]

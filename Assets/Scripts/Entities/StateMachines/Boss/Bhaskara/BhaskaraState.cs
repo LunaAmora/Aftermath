@@ -75,6 +75,7 @@ namespace Aftermath
         {
             LookAt(Entity.FlyStage.transform.position);
             Entity.SetIdle(false);
+            Entity._speed = 8;
         }
 
         public override void Exit() {}

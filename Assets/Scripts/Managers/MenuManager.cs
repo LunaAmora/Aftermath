@@ -13,6 +13,7 @@ namespace Aftermath
         {
             _input.OnMouseClick += MouseClick;
             _input.Initialize();
+            SoundPlayer.Instance.SetMusic(SoundPlayer.MusicEnum.Abertura, true);
         }
 
         void OnDestroy()

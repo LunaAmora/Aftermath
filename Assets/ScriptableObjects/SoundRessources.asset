@@ -12,5 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57154a6a015ed47429f067b568df7e3f, type: 3}
   m_Name: SoundRessources
   m_EditorClassIdentifier: 
-  Musics: []
-  AudioClips: []
+  Musics:
+  - {fileID: 8300000, guid: 1a82d4e517e608448821e6a8bd0b872b, type: 3}
+  - {fileID: 8300000, guid: 2e83eb1db0aab4c4f9f00d4b961eed89, type: 3}
+  - {fileID: 8300000, guid: 1891306d53e14794ebb7a5b461fd63ae, type: 3}
+  - {fileID: 8300000, guid: c4a8868807c150d4f8e0cdc5af45c565, type: 3}
+  AudioClips:
+  - {fileID: 8300000, guid: 379285d6fb5f0ba4787a2e0c57107221, type: 3}
+  - {fileID: 8300000, guid: 257162ef24e31144e8a6b0d7cf34a1ac, type: 3}
+  - {fileID: 8300000, guid: cd586045d26ae0146982d7fcbb829a3a, type: 3}
+  - {fileID: 8300000, guid: a749e6ab40eeb4b489aa28ebd779f37c, type: 3}
+  - {fileID: 8300000, guid: 15b0391602e8d2546a0e1c011d41ed37, type: 3}
+  - {fileID: 8300000, guid: 87da030528278f4458cd9b6ecc56197d, type: 3}
+  - {fileID: 8300000, guid: 48ddd68edf398e04287e919c56f7a6e8, type: 3}

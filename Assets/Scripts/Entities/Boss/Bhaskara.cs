@@ -13,14 +13,28 @@ namespace Aftermath
         public BossFlyingStage FlyStage => _flyStage;
 
         private BhaskaraStateMachine _state;
+        private SoundPlayer _soundplayer;
 
         void Start()
         {
-            OnDeath += () => GameManager.Instance.ExitToMenu();
             _state = GetComponent<BhaskaraStateMachine>();
+            _soundplayer = SoundPlayer.Instance;
             _state.Initialize(this);
+            OnDeath += Death;
+            OnDamaged += Damaged;
             Idle();
         }
+
+        void Death()
+        {
+            gameObject.SetActive(false);
+            _soundplayer.StopMusic();
+            _soundplayer.PlayAudio(SoundPlayer.AudioEnum.DerrotaBhaskara);
+            _soundplayer.OnMusicEnd += ()
+                => GameManager.Instance.Victory();
+        }
+
+        void Damaged() => _soundplayer.PlayAudio(SoundPlayer.AudioEnum.DanoBhaskara);
 
         [ContextMenu("Idle")]
         public void Idle()

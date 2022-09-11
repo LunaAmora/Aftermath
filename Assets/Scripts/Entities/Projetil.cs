@@ -8,8 +8,9 @@ namespace Aftermath
         [SerializeField] private float _duration = 2f;
         [SerializeField] private float _damage = 10f;
         private ProjOwner _owner;
+        private SoundPlayer.AudioEnum _hitSound;
 
-        public void Impulse(float force, Vector3 dir, ProjOwner owner = ProjOwner.Player)
+        public void Impulse(float force, Vector3 dir, SoundPlayer.AudioEnum hitsound, ProjOwner owner = ProjOwner.Player)
         {
             _owner = owner;
             GetComponent<Rigidbody>().AddForce(dir * force);
@@ -27,6 +28,7 @@ namespace Aftermath
 
             if (entity != null)
             {
+                SoundPlayer.Instance.PlayAudio(_hitSound);
                 entity.TakeDamage(_damage);
                 Destroy(gameObject);
             }

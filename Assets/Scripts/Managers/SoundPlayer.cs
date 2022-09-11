@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Aftermath
@@ -12,12 +13,35 @@ namespace Aftermath
 
         private AudioSource _audioSource;
 
+        public Action OnMusicEnd;
+
         public enum MusicEnum
         {
+            Abertura,
+            BhaskaraIntro,
+            Bhaskara,
+            VitoriaPlayer,
         }
 
         public enum AudioEnum
         {
+            PassoPlayer,
+            TiroPlayer,
+            TiroPlayer2,
+            DamagedBoss,
+            PassoBhaskara,
+            DanoBhaskara,
+            DerrotaBhaskara,
+        }
+
+        void Update()
+        {
+            if (!_musicPlayer.isPlaying && OnMusicEnd != null)
+            {
+                var temp = OnMusicEnd;
+                OnMusicEnd = null;
+                temp?.Invoke();
+            }
         }
 
         public void InitializeAudioPlayer()
@@ -60,13 +84,14 @@ namespace Aftermath
             return false;
         }
 
-        public void SetMusic(MusicEnum music)
+        public void SetMusic(MusicEnum music, bool loop = false)
         {
             StopMusic();
             if(GetMusic(music, out AudioClip clip))
             {
                 _musicPlayer.clip = clip;
                 _musicPlayer.Play();
+                _musicPlayer.loop = loop;
             }
         }
 
