@@ -58,13 +58,13 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/WebGL.loader.js";
       var config = {
-        dataUrl: buildUrl + "/WebGL.data.br",
-        frameworkUrl: buildUrl + "/WebGL.framework.js.br",
-        codeUrl: buildUrl + "/WebGL.wasm.br",
+        dataUrl: buildUrl + "/WebGL.data.unityweb",
+        frameworkUrl: buildUrl + "/WebGL.framework.js.unityweb",
+        codeUrl: buildUrl + "/WebGL.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "QuemNaoDevNaoTeme",
         productName: "Aftermath",
-        productVersion: "0.0.59",
+        productVersion: "0.0.61",
         showBanner: unityShowBanner,
       };
 
@@ -97,7 +97,7 @@
         canvas.style.height = "600px";
       }
 
-      canvas.style.background = "url('" + buildUrl + "/WebGL.jpg.br') center / cover";
+      canvas.style.background = "url('" + buildUrl + "/WebGL.jpg.unityweb') center / cover";
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
