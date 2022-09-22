@@ -56,15 +56,15 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WebGL.loader.js";
+      var loaderUrl = buildUrl + "/Aftermath.loader.js";
       var config = {
-        dataUrl: buildUrl + "/WebGL.data.unityweb",
-        frameworkUrl: buildUrl + "/WebGL.framework.js.unityweb",
-        codeUrl: buildUrl + "/WebGL.wasm.unityweb",
+        dataUrl: buildUrl + "/Aftermath.data.unityweb",
+        frameworkUrl: buildUrl + "/Aftermath.framework.js.unityweb",
+        codeUrl: buildUrl + "/Aftermath.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "QuemNaoDevNaoTeme",
         productName: "Aftermath",
-        productVersion: "0.0.61",
+        productVersion: "0.0.57",
         showBanner: unityShowBanner,
       };
 
@@ -97,7 +97,7 @@
         canvas.style.height = "600px";
       }
 
-      canvas.style.background = "url('" + buildUrl + "/WebGL.jpg.unityweb') center / cover";
+      canvas.style.background = "url('" + buildUrl + "/Aftermath.jpg.unityweb') center / cover";
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
