@@ -1,0 +1,83 @@
+name: Build
+on:
+  workflow_dispatch:
+    inputs:
+      suffix:
+        description: 'Version'
+        required: true
+jobs:
+  buildForAllSupportedPlatforms:
+    name: Build for ${{ matrix.targetPlatform }}
+    runs-on: ubuntu-latest
+    env:
+      buildName: Aftermath
+    strategy:
+      fail-fast: false
+      matrix:
+        targetPlatform: [StandaloneWindows64, WebGL]
+        include:
+          - targetPlatform: StandaloneWindows64
+            branch: main
+            artifact: Windows
+          - targetPlatform: WebGL
+            branch: WebGL
+            artifact: Web
+
+    steps:
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ matrix.branch }}
+
+      # Git LFS
+      - name: Create LFS file list
+        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
+
+      - name: Restore LFS cache
+        uses: actions/cache@v3
+        id: lfs-cache
+        with:
+          path: .git/lfs
+          key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
+
+      - name: Git LFS Pull
+        run: |
+          git lfs pull
+          git add .
+          git reset --hard
+
+      # Cache
+      - uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-
+
+      # Build
+      - name: Build project
+        uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: ${{ matrix.targetPlatform }}
+          buildName: ${{ env.buildName }}
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.buildName }}-${{ github.event.inputs.suffix }}-${{ matrix.artifact }}
+          path: |
+            build/${{ matrix.targetPlatform }}
+            !build/${{ matrix.targetPlatform }}/${{ env.buildName }}/${{ env.buildName }}_BurstDebugInformation_DoNotShip
+            !build/${{ matrix.targetPlatform }}/${{ env.buildName }}_BurstDebugInformation_DoNotShip
+      
+      # Deploy WebGL
+      - name: Deploy to gh-pages
+        if: ${{ matrix.targetPlatform == 'WebGL' }}
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: build/WebGL/${{ env.buildName }}
